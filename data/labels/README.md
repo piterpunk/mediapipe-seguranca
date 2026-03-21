@@ -2,6 +2,17 @@
 
 Este diretório deve armazenar os rótulos e anotações usados para aprendizado supervisionado e validação analítica.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Dados](../README.md)
+- [Dados brutos](../raw/README.md)
+- [Dados intermediários](../interim/README.md)
+- [Dados processados](../processed/README.md)
+- [Dicionário de dados](../../docs/DICIONARIO_DE_DADOS.md)
+- [Notebook supervisionado](../../notebooks/06_supervised.md)
+- [Resultados de modelagem](../../reports/models/README.md)
+
 ## O que deve ficar aqui
 
 - taxonomias de eventos;

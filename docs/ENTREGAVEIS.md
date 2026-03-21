@@ -2,6 +2,18 @@
 
 Este documento refina os entregáveis previstos para o projeto e organiza o que deve ser produzido, onde será armazenado e como cada item poderá ser validado.
 
+## Navegação
+
+- [Início](../README.md)
+- [Contribuição](../CONTRIBUTING.md)
+- [Arquitetura](ARQUITETURA.md)
+- [Plano de execução](PLANO_DE_EXECUCAO.md)
+- [Roadmap](ROADMAP.md)
+- [Dicionário de dados](DICIONARIO_DE_DADOS.md)
+- [Dados](../data/README.md)
+- [Notebooks](../notebooks/README.md)
+- [Relatórios](../reports/README.md)
+
 ## Objetivo deste documento
 
 Padronizar a evolução do repositório para que o projeto avance com clareza técnica e coerência acadêmica, separando os artefatos por natureza e por etapa de maturidade.

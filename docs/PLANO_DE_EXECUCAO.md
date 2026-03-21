@@ -2,6 +2,18 @@
 
 Este documento organiza o desenvolvimento do projeto em etapas práticas, conectando implementação, análise e material de apresentação.
 
+## Navegação
+
+- [Início](../README.md)
+- [Contribuição](../CONTRIBUTING.md)
+- [Arquitetura](ARQUITETURA.md)
+- [Entregáveis](ENTREGAVEIS.md)
+- [Roadmap](ROADMAP.md)
+- [Dicionário de dados](DICIONARIO_DE_DADOS.md)
+- [Dados](../data/README.md)
+- [Notebooks](../notebooks/README.md)
+- [Relatórios](../reports/README.md)
+
 ## Etapa 1: fundação do repositório
 
 **Objetivo**: garantir uma base organizada e executável.

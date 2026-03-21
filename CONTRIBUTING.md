@@ -2,6 +2,20 @@
 
 Este documento define convenções para evoluir o projeto de forma organizada, reprodutível e coerente com os entregáveis acadêmicos.
 
+## Navegação
+
+- [Início](README.md)
+- [Arquitetura](docs/ARQUITETURA.md)
+- [Entregáveis](docs/ENTREGAVEIS.md)
+- [Plano de execução](docs/PLANO_DE_EXECUCAO.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Dicionário de dados](docs/DICIONARIO_DE_DADOS.md)
+- [Dados](data/README.md)
+- [Notebooks](notebooks/README.md)
+- [Relatórios](reports/README.md)
+- [Código-fonte](src/README.md)
+- [Testes](tests/README.md)
+
 ## Objetivo
 
 Padronizar como novas contribuições entram no repositório, seja em código, documentação, dados, notebooks ou relatórios.

@@ -2,6 +2,18 @@
 
 Este diretório deve armazenar as bases finais ou consolidadas, prontas para EDA, modelagem e avaliação.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Dados](../README.md)
+- [Dados brutos](../raw/README.md)
+- [Dados intermediários](../interim/README.md)
+- [Rótulos](../labels/README.md)
+- [Arquitetura](../../docs/ARQUITETURA.md)
+- [Dicionário de dados](../../docs/DICIONARIO_DE_DADOS.md)
+- [Notebook de EDA](../../notebooks/04_eda.md)
+- [Modelagem](../../reports/models/README.md)
+
 ## O que deve ficar aqui
 
 - features por frame;

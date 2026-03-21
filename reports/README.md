@@ -2,6 +2,19 @@
 
 Este diretório concentra os artefatos analíticos e acadêmicos usados para consolidar os resultados do projeto.
 
+## Navegação
+
+- [Início](../README.md)
+- [Arquitetura](../docs/ARQUITETURA.md)
+- [Entregáveis](../docs/ENTREGAVEIS.md)
+- [Roadmap](../docs/ROADMAP.md)
+- [Dados](../data/README.md)
+- [Notebooks](../notebooks/README.md)
+- [EDA](eda/README.md)
+- [Modelos](models/README.md)
+- [Figuras](figures/README.md)
+- [Defesa](defesa/README.md)
+
 ## Subdiretórios
 
 - `eda/`: sínteses de análise exploratória, tabelas e interpretações.

@@ -1,5 +1,15 @@
 # `02_extracao_mediapipe.ipynb`
 
+## Navegação do notebook
+
+- [Início](../README.md)
+- [Índice dos notebooks](README.md)
+- [Anterior: ingestão](01_ingestao.md)
+- [Próximo: feature engineering](03_feature_engineering.md)
+- [Dados intermediários](../data/interim/README.md)
+- [Arquitetura](../docs/ARQUITETURA.md)
+- [Dicionário de dados](../docs/DICIONARIO_DE_DADOS.md)
+
 ## Objetivo
 
 Explorar a camada de percepção com MediaPipe e verificar a viabilidade da extração de sinais visuais relevantes.

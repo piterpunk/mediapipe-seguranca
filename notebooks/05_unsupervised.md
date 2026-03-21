@@ -1,5 +1,15 @@
 # `05_unsupervised.ipynb`
 
+## Navegação do notebook
+
+- [Início](../README.md)
+- [Índice dos notebooks](README.md)
+- [Anterior: EDA](04_eda.md)
+- [Próximo: supervisionado](06_supervised.md)
+- [Dados processados](../data/processed/README.md)
+- [Resultados de modelagem](../reports/models/README.md)
+- [Figuras](../reports/figures/README.md)
+
 ## Objetivo
 
 Explorar agrupamentos e identificar possíveis eventos fora do padrão sem depender de rótulos prévios.

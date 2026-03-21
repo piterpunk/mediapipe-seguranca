@@ -13,16 +13,25 @@ Este repositório organiza o trabalho técnico e acadêmico do projeto integrado
 
 ## Navegação rápida
 
-- `README.md`: visão geral do projeto, escopo, objetivos e forma de execução.
-- `CONTRIBUTING.md`: convenções para evolução do repositório e organização das contribuições.
-- `docs/DICIONARIO_DE_DADOS.md`: definição das features, agregações e rótulos esperados.
-- `docs/ENTREGAVEIS.md`: detalhamento dos entregáveis, critérios de aceite e artefatos esperados.
-- `docs/PLANO_DE_EXECUCAO.md`: plano operacional de evolução do projeto por etapas.
-- `docs/ARQUITETURA.md`: visão da arquitetura lógica, camadas da pipeline e responsabilidades.
-- `docs/ROADMAP.md`: fases, dependências, marcos e prioridades de evolução do projeto.
-- `data/README.md`: contrato de uso dos diretórios de dados.
-- `notebooks/README.md`: planejamento dos notebooks e sua função no projeto.
-- `reports/README.md`: organização das evidências analíticas e materiais de defesa.
+- [`README.md`](README.md): visão geral do projeto, escopo, objetivos e forma de execução.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md): convenções para evolução do repositório e organização das contribuições.
+- [`docs/DICIONARIO_DE_DADOS.md`](docs/DICIONARIO_DE_DADOS.md): definição das features, agregações e rótulos esperados.
+- [`docs/ENTREGAVEIS.md`](docs/ENTREGAVEIS.md): detalhamento dos entregáveis, critérios de aceite e artefatos esperados.
+- [`docs/PLANO_DE_EXECUCAO.md`](docs/PLANO_DE_EXECUCAO.md): plano operacional de evolução do projeto por etapas.
+- [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md): visão da arquitetura lógica, camadas da pipeline e responsabilidades.
+- [`docs/ROADMAP.md`](docs/ROADMAP.md): fases, dependências, marcos e prioridades de evolução do projeto.
+- [`data/README.md`](data/README.md): contrato de uso dos diretórios de dados.
+- [`notebooks/README.md`](notebooks/README.md): planejamento dos notebooks e sua função no projeto.
+- [`reports/README.md`](reports/README.md): organização das evidências analíticas e materiais de defesa.
+- [`src/README.md`](src/README.md): visão da organização do código-fonte.
+- [`tests/README.md`](tests/README.md): estratégia de testes e evolução da validação.
+
+## Mapa por área
+
+- **Documentação-base**: [`CONTRIBUTING.md`](CONTRIBUTING.md), [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md), [`docs/ROADMAP.md`](docs/ROADMAP.md)
+- **Dados**: [`data/README.md`](data/README.md), [`data/raw/README.md`](data/raw/README.md), [`data/processed/README.md`](data/processed/README.md), [`data/labels/README.md`](data/labels/README.md)
+- **Análise**: [`notebooks/README.md`](notebooks/README.md), [`reports/README.md`](reports/README.md), [`reports/eda/README.md`](reports/eda/README.md), [`reports/models/README.md`](reports/models/README.md)
+- **Implementação**: [`src/README.md`](src/README.md), [`tests/README.md`](tests/README.md)
 
 ## Objetivo geral
 

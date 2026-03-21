@@ -1,5 +1,15 @@
 # `04_eda.ipynb`
 
+## Navegação do notebook
+
+- [Início](../README.md)
+- [Índice dos notebooks](README.md)
+- [Anterior: feature engineering](03_feature_engineering.md)
+- [Próximo: não supervisionado](05_unsupervised.md)
+- [Dados processados](../data/processed/README.md)
+- [Relatórios de EDA](../reports/eda/README.md)
+- [Figuras](../reports/figures/README.md)
+
 ## Objetivo
 
 Entender a distribuição dos dados, suas relações principais e possíveis problemas de qualidade.

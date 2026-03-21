@@ -2,6 +2,16 @@
 
 Este diretório reúne as saídas de **análise exploratória de dados** do projeto.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Relatórios](../README.md)
+- [Modelos](../models/README.md)
+- [Figuras](../figures/README.md)
+- [Notebooks](../../notebooks/README.md)
+- [Notebook de EDA](../../notebooks/04_eda.md)
+- [Dicionário de dados](../../docs/DICIONARIO_DE_DADOS.md)
+
 ## O que deve ficar aqui
 
 - sínteses textuais da exploração inicial da base;

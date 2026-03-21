@@ -2,6 +2,19 @@
 
 Este documento descreve a arquitetura lógica do projeto, conectando objetivos acadêmicos, organização do repositório e fluxo da pipeline.
 
+## Navegação
+
+- [Início](../README.md)
+- [Contribuição](../CONTRIBUTING.md)
+- [Entregáveis](ENTREGAVEIS.md)
+- [Plano de execução](PLANO_DE_EXECUCAO.md)
+- [Roadmap](ROADMAP.md)
+- [Dicionário de dados](DICIONARIO_DE_DADOS.md)
+- [Dados](../data/README.md)
+- [Notebooks](../notebooks/README.md)
+- [Relatórios](../reports/README.md)
+- [Código-fonte](../src/README.md)
+
 ## Visão geral
 
 O projeto segue uma arquitetura orientada a pipeline, na qual vídeos de segurança são transformados em sinais visuais, depois em atributos analíticos, e por fim em evidências quantitativas e visuais para análise e defesa acadêmica.

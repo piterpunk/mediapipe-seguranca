@@ -2,6 +2,19 @@
 
 Este diretório concentra os artefatos de dados usados ao longo da pipeline.
 
+## Navegação
+
+- [Início](../README.md)
+- [Arquitetura](../docs/ARQUITETURA.md)
+- [Dicionário de dados](../docs/DICIONARIO_DE_DADOS.md)
+- [Entregáveis](../docs/ENTREGAVEIS.md)
+- [Dados brutos](raw/README.md)
+- [Dados intermediários](interim/README.md)
+- [Dados processados](processed/README.md)
+- [Rótulos](labels/README.md)
+- [Notebooks](../notebooks/README.md)
+- [Relatórios](../reports/README.md)
+
 - `raw/`: vídeos originais ou arquivos brutos de entrada.
 - `interim/`: saídas intermediárias de extração e preparação.
 - `processed/`: bases finais para análise e modelagem.

@@ -1,5 +1,15 @@
 # `03_feature_engineering.ipynb`
 
+## Navegação do notebook
+
+- [Início](../README.md)
+- [Índice dos notebooks](README.md)
+- [Anterior: extração com MediaPipe](02_extracao_mediapipe.md)
+- [Próximo: EDA](04_eda.md)
+- [Dados processados](../data/processed/README.md)
+- [Dicionário de dados](../docs/DICIONARIO_DE_DADOS.md)
+- [Código-fonte](../src/README.md)
+
 ## Objetivo
 
 Transformar os sinais extraídos em atributos analíticos utilizáveis em EDA e modelagem.

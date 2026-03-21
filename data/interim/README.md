@@ -2,6 +2,18 @@
 
 Este diretório deve armazenar saídas temporárias ou parcialmente transformadas da pipeline.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Dados](../README.md)
+- [Dados brutos](../raw/README.md)
+- [Dados processados](../processed/README.md)
+- [Rótulos](../labels/README.md)
+- [Arquitetura](../../docs/ARQUITETURA.md)
+- [Dicionário de dados](../../docs/DICIONARIO_DE_DADOS.md)
+- [Notebook de extração](../../notebooks/02_extracao_mediapipe.md)
+- [Notebook de features](../../notebooks/03_feature_engineering.md)
+
 ## O que deve ficar aqui
 
 - extrações parciais por frame;

@@ -2,6 +2,15 @@
 
 Este diretório concentra os testes automatizados mínimos do projeto.
 
+## Navegação
+
+- [Início](../README.md)
+- [Contribuição](../CONTRIBUTING.md)
+- [Código-fonte](../src/README.md)
+- [Arquitetura](../docs/ARQUITETURA.md)
+- [Roadmap](../docs/ROADMAP.md)
+- [Notebooks](../notebooks/README.md)
+
 ## Objetivo atual
 
 Garantir que a pipeline base execute, gere saída e mantenha uma estrutura estável para evolução incremental.

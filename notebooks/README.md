@@ -2,6 +2,17 @@
 
 Este diretório foi criado para receber os notebooks descritos no `README.md`.
 
+## Navegação
+
+- [Início](../README.md)
+- [Arquitetura](../docs/ARQUITETURA.md)
+- [Dicionário de dados](../docs/DICIONARIO_DE_DADOS.md)
+- [Entregáveis](../docs/ENTREGAVEIS.md)
+- [Dados](../data/README.md)
+- [Relatórios](../reports/README.md)
+- [Código-fonte](../src/README.md)
+- [Testes](../tests/README.md)
+
 - `01_ingestao.ipynb`: exploração inicial da leitura e estrutura dos vídeos.
 - `02_extracao_mediapipe.ipynb`: teste das tasks e inspeção dos sinais extraídos.
 - `03_feature_engineering.ipynb`: consolidação de atributos por frame e janela.

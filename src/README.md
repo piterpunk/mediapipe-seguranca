@@ -2,6 +2,16 @@
 
 O diretório `src/` concentra a implementação do projeto em formato modular.
 
+## Navegação
+
+- [Início](../README.md)
+- [Contribuição](../CONTRIBUTING.md)
+- [Arquitetura](../docs/ARQUITETURA.md)
+- [Dicionário de dados](../docs/DICIONARIO_DE_DADOS.md)
+- [Notebooks](../notebooks/README.md)
+- [Dados](../data/README.md)
+- [Testes](../tests/README.md)
+
 ## Módulos atuais
 
 - `mediapipe_seguranca/video_io.py`: ingestão e metadados de vídeo.

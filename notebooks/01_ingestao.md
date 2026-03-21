@@ -1,5 +1,14 @@
 # `01_ingestao.ipynb`
 
+## Navegação do notebook
+
+- [Início](../README.md)
+- [Índice dos notebooks](README.md)
+- [Próximo: extração com MediaPipe](02_extracao_mediapipe.md)
+- [Dados brutos](../data/raw/README.md)
+- [Arquitetura](../docs/ARQUITETURA.md)
+- [Relatórios](../reports/README.md)
+
 ## Objetivo
 
 Validar a leitura dos vídeos, a organização dos frames e a estrutura temporal mínima para a pipeline.

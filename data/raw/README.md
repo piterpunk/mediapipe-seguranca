@@ -2,6 +2,17 @@
 
 Este diretório deve armazenar os **insumos originais** do projeto, sem transformação analítica.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Dados](../README.md)
+- [Dados intermediários](../interim/README.md)
+- [Dados processados](../processed/README.md)
+- [Rótulos](../labels/README.md)
+- [Arquitetura](../../docs/ARQUITETURA.md)
+- [Dicionário de dados](../../docs/DICIONARIO_DE_DADOS.md)
+- [Notebook de ingestão](../../notebooks/01_ingestao.md)
+
 ## O que deve ficar aqui
 
 - vídeos originais de CFTV ou gravações simuladas;

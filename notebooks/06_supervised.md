@@ -1,5 +1,15 @@
 # `06_supervised.ipynb`
 
+## Navegação do notebook
+
+- [Início](../README.md)
+- [Índice dos notebooks](README.md)
+- [Anterior: não supervisionado](05_unsupervised.md)
+- [Próximo: visualizações](07_visualizacoes.md)
+- [Dados processados](../data/processed/README.md)
+- [Rótulos](../data/labels/README.md)
+- [Resultados de modelagem](../reports/models/README.md)
+
 ## Objetivo
 
 Treinar e comparar classificadores para distinguir eventos rotulados de interesse.

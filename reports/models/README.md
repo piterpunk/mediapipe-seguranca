@@ -2,6 +2,17 @@
 
 Este diretório reúne os resultados analíticos da etapa de modelagem supervisionada e não supervisionada.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Relatórios](../README.md)
+- [EDA](../eda/README.md)
+- [Figuras](../figures/README.md)
+- [Defesa](../defesa/README.md)
+- [Notebook não supervisionado](../../notebooks/05_unsupervised.md)
+- [Notebook supervisionado](../../notebooks/06_supervised.md)
+- [Dicionário de dados](../../docs/DICIONARIO_DE_DADOS.md)
+
 ## O que deve ficar aqui
 
 - comparação entre modelos;

@@ -2,6 +2,19 @@
 
 Este documento descreve os principais campos, métricas e rótulos previstos no projeto, com foco no estado atual da pipeline demo e na evolução esperada para a versão com vídeo real e MediaPipe.
 
+## Navegação
+
+- [Início](../README.md)
+- [Contribuição](../CONTRIBUTING.md)
+- [Arquitetura](ARQUITETURA.md)
+- [Entregáveis](ENTREGAVEIS.md)
+- [Plano de execução](PLANO_DE_EXECUCAO.md)
+- [Roadmap](ROADMAP.md)
+- [Dados](../data/README.md)
+- [Dados processados](../data/processed/README.md)
+- [Rótulos](../data/labels/README.md)
+- [Notebooks](../notebooks/README.md)
+
 ## Objetivo
 
 Padronizar a interpretação das variáveis analíticas do projeto, reduzir ambiguidades entre notebooks, código e relatórios, e apoiar a rastreabilidade das bases geradas em `data/interim/` e `data/processed/`.

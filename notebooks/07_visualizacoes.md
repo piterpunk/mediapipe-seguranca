@@ -1,5 +1,14 @@
 # `07_visualizacoes.ipynb`
 
+## Navegação do notebook
+
+- [Início](../README.md)
+- [Índice dos notebooks](README.md)
+- [Anterior: supervisionado](06_supervised.md)
+- [Relatórios](../reports/README.md)
+- [Figuras](../reports/figures/README.md)
+- [Defesa](../reports/defesa/README.md)
+
 ## Objetivo
 
 Consolidar visualizações finais para relatório e apresentação de defesa.

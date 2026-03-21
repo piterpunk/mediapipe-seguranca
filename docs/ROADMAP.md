@@ -2,6 +2,18 @@
 
 Este documento organiza a evolução do projeto em fases, marcos e dependências, conectando planejamento técnico, entregáveis acadêmicos e prioridades de implementação.
 
+## Navegação
+
+- [Início](../README.md)
+- [Contribuição](../CONTRIBUTING.md)
+- [Arquitetura](ARQUITETURA.md)
+- [Entregáveis](ENTREGAVEIS.md)
+- [Plano de execução](PLANO_DE_EXECUCAO.md)
+- [Dicionário de dados](DICIONARIO_DE_DADOS.md)
+- [Dados](../data/README.md)
+- [Notebooks](../notebooks/README.md)
+- [Relatórios](../reports/README.md)
+
 ## Objetivo
 
 Servir como visão executiva do progresso esperado do projeto, deixando claro:

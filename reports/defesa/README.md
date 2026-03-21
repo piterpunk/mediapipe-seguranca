@@ -2,6 +2,16 @@
 
 Este diretório reúne os insumos voltados à apresentação final do projeto.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Relatórios](../README.md)
+- [EDA](../eda/README.md)
+- [Modelos](../models/README.md)
+- [Figuras](../figures/README.md)
+- [Notebook de visualizações](../../notebooks/07_visualizacoes.md)
+- [Roadmap](../../docs/ROADMAP.md)
+
 ## O que deve ficar aqui
 
 - roteiro de apresentação;

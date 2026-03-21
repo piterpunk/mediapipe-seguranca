@@ -2,6 +2,15 @@
 
 Este diretório concentra os artefatos visuais reutilizáveis do projeto.
 
+## Navegação
+
+- [Início](../../README.md)
+- [Relatórios](../README.md)
+- [EDA](../eda/README.md)
+- [Modelos](../models/README.md)
+- [Defesa](../defesa/README.md)
+- [Notebook de visualizações](../../notebooks/07_visualizacoes.md)
+
 ## O que deve ficar aqui
 
 - gráficos finais de EDA;
