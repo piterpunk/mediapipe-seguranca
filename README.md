@@ -1,0 +1,204 @@
+# MediaPipe Segurança
+
+Projeto acadêmico voltado à extração de indicadores comportamentais em filmagens de segurança com **MediaPipe** e técnicas de **aprendizado de máquina**. A proposta transforma vídeos de CFTV em dados estruturados para análise de padrões, detecção de anomalias e classificação de eventos de risco em um contexto acadêmico e reprodutível.
+
+## Objetivo geral
+
+Desenvolver um sistema em Python para processar filmagens de segurança, extrair informações com MediaPipe e aplicar técnicas de aprendizado supervisionado e não supervisionado para analisar comportamento e identificar eventos relevantes.
+
+## Problema de pesquisa
+
+Sistemas de vídeo monitoramento normalmente são usados de forma reativa, após a ocorrência de incidentes. Este projeto busca responder à seguinte pergunta:
+
+> Como usar vídeos de segurança e tarefas prontas do MediaPipe para extrair atributos visuais e temporais que permitam identificar padrões de comportamento, detectar anomalias e classificar automaticamente eventos de risco?
+
+## Hipótese
+
+Um pipeline em Python, alimentado por vídeos de segurança e pelas saídas do MediaPipe, é capaz de gerar uma base analítica suficientemente rica para sustentar:
+
+- descoberta de padrões por métodos não supervisionados;
+- classificação de eventos por métodos supervisionados;
+- resultados interpretáveis e úteis para apresentação acadêmica.
+
+## Objetivos específicos
+
+- Construir um pipeline de ingestão e processamento de vídeos em Python.
+- Extrair atributos visuais com MediaPipe, como presença de pessoas, landmarks corporais e sinais de movimento.
+- Transformar os resultados em uma base tabular com features por frame e por janela temporal.
+- Realizar análise exploratória com estatística descritiva, correlação e visualizações.
+- Aplicar algoritmos não supervisionados para clusterização e detecção de anomalias.
+- Aplicar algoritmos supervisionados para classificar eventos como normal, aglomeração, corrida, queda e permanência suspeita.
+- Comparar modelos por métricas apropriadas e consolidar visualizações para apresentação final.
+
+## Escopo inicial
+
+O escopo previsto contempla a análise de:
+
+- detecção de pessoas;
+- postura e landmarks corporais;
+- movimentação e deslocamento;
+- permanência em áreas monitoradas;
+- aglomeração;
+- anomalias comportamentais;
+- classificação de eventos de risco.
+
+## Abordagem técnica
+
+### Camada de percepção
+
+O projeto utiliza o **MediaPipe Solutions** como base de percepção visual, com foco inicial em:
+
+- **Object Detector** para detecção e localização de pessoas e objetos;
+- **Pose Landmarker** para extração de landmarks corporais, postura e dinâmica de movimento;
+- **Image Classifier** como possibilidade futura para especializações adicionais de classificação.
+
+### Camada analítica
+
+Sobre os atributos extraídos do vídeo, serão aplicadas técnicas de ciência de dados e aprendizado de máquina em duas frentes:
+
+- **Aprendizado não supervisionado** para identificar perfis de cena, agrupamentos e eventos fora do padrão.
+- **Aprendizado supervisionado** para classificar eventos rotulados com base em indicadores derivados do vídeo.
+
+## Pipeline proposto
+
+1. **Ingestão**: leitura de vídeos MP4 ou fluxos gravados, extração de frames e organização por janelas temporais.
+2. **Percepção**: uso de Object Detector e Pose Landmarker para localizar pessoas e coletar sinais corporais.
+3. **Engenharia de atributos**: cálculo de contagem de pessoas, permanência, densidade, deslocamento, velocidade aproximada e ângulos de pose.
+4. **EDA e estatística**: análise descritiva, correlação, distribuição, outliers e visualizações.
+5. **Modelagem**: treinamento e comparação de algoritmos supervisionados e não supervisionados.
+6. **Visualização**: geração de timelines, heatmaps, gráficos comparativos e material de apoio para defesa.
+
+## Indicadores planejados
+
+O sistema deverá produzir indicadores comportamentais e espaciais anonimizados, como:
+
+- contagem de pessoas por frame;
+- ocupação por zona;
+- permanência;
+- direção de deslocamento;
+- densidade de cena;
+- velocidade aproximada;
+- frequência de mudança postural;
+- score de movimento;
+- indícios de corrida;
+- possibilidade de queda;
+- permanência acima do esperado em áreas sensíveis.
+
+## Modelos e métricas
+
+### Aprendizado não supervisionado
+
+Modelos iniciais previstos:
+
+- K-Means
+- DBSCAN
+- Isolation Forest
+
+Métricas previstas:
+
+- Silhouette Score
+- Davies-Bouldin
+- Calinski-Harabasz
+- inspeção qualitativa dos agrupamentos
+
+### Aprendizado supervisionado
+
+Modelos candidatos:
+
+- Regressão Logística
+- Random Forest
+- SVM
+- XGBoost (conforme viabilidade do ambiente)
+
+Métricas previstas:
+
+- accuracy
+- precision
+- recall
+- F1-score
+- AUC-ROC
+- matriz de confusão
+
+## Base de dados e ética
+
+O projeto prioriza vídeos próprios autorizados, bases públicas compatíveis com análise de movimento ou gravações simuladas para fins acadêmicos. O foco está em **atributos comportamentais e espaciais**, não em identificação individual.
+
+Diretrizes principais:
+
+- evitar reconhecimento facial como objetivo central;
+- tratar eventos suspeitos como hipóteses analíticas, nunca como prova conclusiva;
+- registrar limitações, possíveis vieses e contexto de uso dos modelos.
+
+## Entregáveis planejados
+
+- Repositório GitHub organizado com código Python modular, notebooks e documentação.
+- Base processada com atributos extraídos dos vídeos.
+- Análise exploratória com tabelas e visualizações.
+- Resultados de clusterização e detecção de anomalias.
+- Classificadores supervisionados com comparação de desempenho.
+- Apresentação final com roteiro de defesa e demonstração dos resultados.
+
+## Estrutura sugerida do repositório
+
+```text
+mediapipe-seguranca/
+├── data/
+│   ├── raw/
+│   ├── interim/
+│   ├── processed/
+│   └── labels/
+├── notebooks/
+│   ├── 01_ingestao.ipynb
+│   ├── 02_extracao_mediapipe.ipynb
+│   ├── 03_feature_engineering.ipynb
+│   ├── 04_eda.ipynb
+│   ├── 05_unsupervised.ipynb
+│   ├── 06_supervised.ipynb
+│   └── 07_visualizacoes.ipynb
+├── src/
+│   ├── video_io.py
+│   ├── mediapipe_extract.py
+│   ├── tracking_features.py
+│   ├── feature_engineering.py
+│   ├── train_unsupervised.py
+│   ├── train_supervised.py
+│   └── evaluate.py
+├── reports/
+├── requirements.txt
+└── README.md
+```
+
+## Cronograma resumido
+
+| Semana | Foco principal | Resultado esperado |
+| --- | --- | --- |
+| 1 | Escopo e revisão | Tema delimitado, pergunta de pesquisa, repositório criado |
+| 2 | Coleta e anotação | Vídeos selecionados e protocolo de rotulação definido |
+| 3 | Extração com MediaPipe | Pipeline inicial com detecção e pose |
+| 4 | Feature engineering | Base tabular consolidada por frame e janela |
+| 5 | EDA e estatística | Visualizações, correlações e diagnóstico da base |
+| 6 | Modelagem não supervisionada | Clusters, anomalias e interpretação inicial |
+| 7 | Modelagem supervisionada | Comparação entre modelos e métricas |
+| 8 | Consolidação final | Slides, texto final e preparação para defesa |
+
+## Status do projeto
+
+Atualmente o repositório está em fase inicial de estruturação, com base conceitual definida no pré-projeto. Os próximos passos naturais são:
+
+1. criar a estrutura de pastas do repositório;
+2. definir `requirements.txt`;
+3. implementar o pipeline inicial de ingestão de vídeo;
+4. integrar a extração com MediaPipe;
+5. iniciar a geração da base analítica para EDA e modelagem.
+
+## Referências iniciais
+
+- Google AI Edge — MediaPipe Solutions Guide
+- Google AI Edge — Object Detection Guide for Python
+- Google AI Edge — Pose Landmarker Guide for Python
+- Google AI Edge — Image Classification Guide for Python
+- Google AI Edge — `mediapipe_model_maker`
+
+## Observação
+
+Este `README.md` foi elaborado com base no documento `pre_projeto_puc_mediapipe.docx`, consolidando os principais elementos acadêmicos e técnicos da proposta.
