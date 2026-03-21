@@ -2,6 +2,24 @@
 
 Projeto acadêmico voltado à extração de indicadores comportamentais em filmagens de segurança com **MediaPipe** e técnicas de **aprendizado de máquina**. A proposta transforma vídeos de CFTV em dados estruturados para análise de padrões, detecção de anomalias e classificação de eventos de risco em um contexto acadêmico e reprodutível.
 
+## Visão do projeto
+
+Este repositório organiza o trabalho técnico e acadêmico do projeto integrador em torno de quatro eixos:
+
+- **Pipeline de dados**: ingestão, leitura de vídeo, extração de sinais e consolidação de bases analíticas.
+- **Análise exploratória**: construção de estatísticas, visualizações e interpretação dos dados derivados das filmagens.
+- **Modelagem analítica**: aplicação de métodos supervisionados e não supervisionados para identificar padrões e eventos de risco.
+- **Material de defesa**: organização de evidências, relatórios, figuras e estrutura de apresentação final.
+
+## Navegação rápida
+
+- `README.md`: visão geral do projeto, escopo, objetivos e forma de execução.
+- `docs/ENTREGAVEIS.md`: detalhamento dos entregáveis, critérios de aceite e artefatos esperados.
+- `docs/PLANO_DE_EXECUCAO.md`: plano operacional de evolução do projeto por etapas.
+- `data/README.md`: contrato de uso dos diretórios de dados.
+- `notebooks/README.md`: planejamento dos notebooks e sua função no projeto.
+- `reports/README.md`: organização das evidências analíticas e materiais de defesa.
+
 ## Objetivo geral
 
 Desenvolver um sistema em Python para processar filmagens de segurança, extrair informações com MediaPipe e aplicar técnicas de aprendizado supervisionado e não supervisionado para analisar comportamento e identificar eventos relevantes.
@@ -138,10 +156,15 @@ Diretrizes principais:
 - Classificadores supervisionados com comparação de desempenho.
 - Apresentação final com roteiro de defesa e demonstração dos resultados.
 
+Os entregáveis foram refinados em trilhas separadas de execução, documentação e validação em `docs/ENTREGAVEIS.md`.
+
 ## Estrutura sugerida do repositório
 
 ```text
 mediapipe-seguranca/
+├── docs/
+│   ├── ENTREGAVEIS.md
+│   └── PLANO_DE_EXECUCAO.md
 ├── data/
 │   ├── raw/
 │   ├── interim/
@@ -164,9 +187,41 @@ mediapipe-seguranca/
 │   ├── train_supervised.py
 │   └── evaluate.py
 ├── reports/
+│   ├── eda/
+│   ├── models/
+│   ├── figures/
+│   └── defesa/
 ├── requirements.txt
 └── README.md
 ```
+
+## Estrutura refinada para os entregáveis
+
+### Entregáveis técnicos
+
+- **Código-fonte** em `src/mediapipe_seguranca/` com módulos separados por responsabilidade.
+- **Runner inicial** em `main.py` para execução da pipeline base.
+- **Teste automatizado** em `tests/test_pipeline.py` para validar a base do projeto.
+
+### Entregáveis de dados
+
+- **Dados brutos** em `data/raw/`.
+- **Saídas intermediárias** em `data/interim/`.
+- **Bases processadas** em `data/processed/`.
+- **Rótulos e anotações** em `data/labels/`.
+
+### Entregáveis analíticos
+
+- **Notebooks de exploração** em `notebooks/`.
+- **Relatórios de EDA** em `reports/eda/`.
+- **Resultados de modelagem** em `reports/models/`.
+- **Figuras, heatmaps e gráficos** em `reports/figures/`.
+
+### Entregáveis acadêmicos
+
+- **Planejamento operacional** em `docs/PLANO_DE_EXECUCAO.md`.
+- **Matriz de entregáveis** em `docs/ENTREGAVEIS.md`.
+- **Material de defesa** em `reports/defesa/`.
 
 ## Cronograma resumido
 
@@ -185,11 +240,11 @@ mediapipe-seguranca/
 
 Atualmente o repositório está em fase inicial de estruturação, com base conceitual definida no pré-projeto. Os próximos passos naturais são:
 
-1. criar a estrutura de pastas do repositório;
-2. definir `requirements.txt`;
-3. implementar o pipeline inicial de ingestão de vídeo;
-4. integrar a extração com MediaPipe;
-5. iniciar a geração da base analítica para EDA e modelagem.
+1. substituir a extração simulada pela leitura real de vídeo;
+2. integrar tasks reais do MediaPipe;
+3. consolidar contrato de dados e rótulos;
+4. produzir notebooks de EDA e modelagem;
+5. transformar resultados em artefatos prontos para defesa.
 
 ## Estrutura inicial criada
 
@@ -200,6 +255,16 @@ Além da documentação, o repositório já conta com uma base executável em Py
 - `tests/test_pipeline.py`: teste básico da pipeline inicial.
 - `requirements.txt`: dependências mínimas para a base analítica.
 - `data/`, `notebooks/` e `reports/`: diretórios preparados para evolução do projeto.
+
+## Critérios de maturidade do repositório
+
+Para que o projeto avance com qualidade, cada entrega deve atender a alguns critérios mínimos:
+
+- **Reprodutibilidade**: scripts e notebooks devem ser executáveis a partir da estrutura do repositório.
+- **Rastreabilidade**: todo artefato analítico deve indicar origem dos dados e etapa da pipeline.
+- **Interpretabilidade**: modelos e visualizações devem ser explicáveis e defendáveis em contexto acadêmico.
+- **Ética e escopo**: o foco deve permanecer em comportamento de cena, não em identificação pessoal.
+- **Organização**: cada resultado deve ser salvo na pasta compatível com seu tipo de evidência.
 
 ## Como executar
 
@@ -227,6 +292,13 @@ python -m unittest discover -s tests -v
 - integrar detectores do MediaPipe conforme os modelos escolhidos;
 - criar notebooks de EDA, clusterização e classificação;
 - adicionar ingestão de rótulos reais em `data/labels/`.
+
+## Convenções de evolução
+
+- novas saídas analíticas devem ser registradas em `reports/`;
+- novas bases geradas devem seguir a separação entre `interim` e `processed`;
+- notebooks devem refletir a ordem da pipeline e manter numeração sequencial;
+- mudanças estruturais devem atualizar o `README.md` e os arquivos em `docs/`.
 
 ## Referências iniciais
 

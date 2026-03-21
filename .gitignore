@@ -78,11 +78,50 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Project outputs
-data/interim/*.csv
-data/processed/*.csv
-reports/*.html
-reports/*.csv
+# Project-specific local artifacts
+.venv/
+.python-version
+
+# Project data artifacts
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+
+data/interim/*
+!data/interim/.gitkeep
+!data/interim/README.md
+
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/README.md
+
+data/labels/*
+!data/labels/.gitkeep
+!data/labels/README.md
+
+# Generated analytical reports and exported figures
+reports/eda/*
+!reports/eda/.gitkeep
+!reports/eda/README.md
+
+reports/models/*
+!reports/models/.gitkeep
+!reports/models/README.md
+
+reports/figures/*
+!reports/figures/.gitkeep
+!reports/figures/README.md
+
+reports/defesa/*
+!reports/defesa/.gitkeep
+!reports/defesa/README.md
+
+*.html
+*.csv
+*.parquet
+*.feather
+*.pkl
+*.joblib
 
 # IPython
 profile_default/
@@ -143,7 +182,6 @@ celerybeat.pid
 # Environments
 .env
 .envrc
-.venv
 env/
 venv/
 ENV/
