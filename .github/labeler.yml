@@ -1,0 +1,56 @@
+# Auto-labeler configuration for PRs
+# Used with actions/labeler@v5
+
+pipeline:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/mediapipe_seguranca/**'
+          - 'main.py'
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tests/**'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**'
+          - '**.md'
+          - 'CONTRIBUTING.md'
+          - 'README.md'
+
+notebooks:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'notebooks/**'
+
+data:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'data/**'
+
+reports:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'reports/**'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**'
+          - '.github/dependabot.yml'
+          - '.github/labeler.yml'
+
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.vscode/**'
+          - '.editorconfig'
+          - 'requirements.txt'
+          - '.gitignore'
+
+agents:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/agents/**'

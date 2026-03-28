@@ -1,0 +1,90 @@
+name: 🐛 Bug Report
+description: Reportar um bug ou comportamento inesperado
+title: "[BUG] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar este bug! Preencha as informações abaixo para nos ajudar a resolver o problema.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do Bug
+      description: Descreva o bug de forma clara e concisa
+      placeholder: O que aconteceu?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento Esperado
+      description: O que você esperava que acontecesse?
+      placeholder: O que deveria ter acontecido?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para Reproduzir
+      description: Como podemos reproduzir o problema?
+      placeholder: |
+        1. Execute `python main.py`
+        2. Observe o erro...
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Traceback
+      description: Cole o traceback ou log de erro completo
+      render: shell
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Módulo Afetado
+      description: Qual módulo do projeto está afetado?
+      options:
+        - video_io (ingestão de vídeo)
+        - mediapipe_extract (percepção visual)
+        - tracking_features (features de rastreamento)
+        - feature_engineering (engenharia de atributos)
+        - train_unsupervised (modelagem não supervisionada)
+        - train_supervised (modelagem supervisionada)
+        - evaluate (avaliação de modelos)
+        - pipeline (orquestração)
+        - config (configuração)
+        - tests (testes)
+        - notebooks (análise/EDA)
+        - docs (documentação)
+        - outro
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: Versão do Python
+      description: "Qual versão do Python está usando? (ex: 3.12.0)"
+      placeholder: "3.12"
+
+  - type: input
+    id: os
+    attributes:
+      label: Sistema Operacional
+      placeholder: "Windows 11 / Ubuntu 22.04 / macOS 14"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto Adicional
+      description: Qualquer informação adicional que possa ajudar

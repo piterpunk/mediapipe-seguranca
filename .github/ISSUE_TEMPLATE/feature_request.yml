@@ -1,0 +1,78 @@
+name: ✨ Feature Request
+description: Sugerir uma nova funcionalidade ou melhoria
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por sugerir uma melhoria! Descreva sua ideia abaixo.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema ou Motivação
+      description: Qual problema esta feature resolve? Qual a motivação?
+      placeholder: Eu gostaria de... / Atualmente não é possível...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solução Proposta
+      description: Descreva como você imagina a solução
+      placeholder: A feature deveria...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Fase do Roadmap
+      description: Em qual fase do roadmap esta feature se encaixa?
+      options:
+        - Fase 2 - Ingestão real de vídeo
+        - Fase 3 - Integração com MediaPipe
+        - Fase 4 - Consolidação da base analítica
+        - Fase 5 - Análise exploratória e estatística
+        - Fase 6 - Modelagem não supervisionada
+        - Fase 7 - Modelagem supervisionada
+        - Fase 8 - Consolidação de defesa
+        - Infraestrutura / Tooling
+        - Não sei
+    validations:
+      required: true
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Módulo Alvo
+      description: Qual módulo seria afetado?
+      options:
+        - video_io (ingestão de vídeo)
+        - mediapipe_extract (percepção visual)
+        - tracking_features (features de rastreamento)
+        - feature_engineering (engenharia de atributos)
+        - train_unsupervised (modelagem não supervisionada)
+        - train_supervised (modelagem supervisionada)
+        - evaluate (avaliação de modelos)
+        - pipeline (orquestração)
+        - notebooks (análise/EDA)
+        - docs (documentação)
+        - novo módulo
+        - não sei
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas Consideradas
+      description: Você considerou abordagens alternativas?
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto Adicional
+      description: Referências, papers, exemplos, screenshots, etc.

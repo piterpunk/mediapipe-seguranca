@@ -1,0 +1,79 @@
+name: 📋 Task
+description: Criar uma tarefa ou subtarefa do roadmap
+title: "[TASK] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este template para tarefas técnicas vinculadas ao roadmap do projeto.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição da Tarefa
+      description: O que precisa ser feito?
+      placeholder: Implementar / Configurar / Criar / Atualizar...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Fase do Roadmap
+      description: A qual fase esta tarefa pertence?
+      options:
+        - Fase 1 - Fundação documental e estrutural
+        - Fase 2 - Ingestão real de vídeo
+        - Fase 3 - Integração com MediaPipe
+        - Fase 4 - Consolidação da base analítica
+        - Fase 5 - Análise exploratória e estatística
+        - Fase 6 - Modelagem não supervisionada
+        - Fase 7 - Modelagem supervisionada
+        - Fase 8 - Consolidação de defesa
+        - Infraestrutura / CI/CD
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de Aceitação
+      description: Como sabemos que a tarefa está concluída?
+      placeholder: |
+        - [ ] Critério 1
+        - [ ] Critério 2
+        - [ ] Testes passando
+      value: |
+        - [ ]
+        - [ ]
+        - [ ] Testes passando
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependências
+      description: Esta tarefa depende de outras issues ou PRs?
+      placeholder: "Depende de #123, requer que Fase X esteja concluída"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade
+      options:
+        - Alta (bloqueante para a fase)
+        - Média (importante mas não bloqueante)
+        - Baixa (nice-to-have)
+    validations:
+      required: true
+
+  - type: textarea
+    id: files
+    attributes:
+      label: Arquivos Afetados
+      description: Quais arquivos ou módulos serão modificados?
+      placeholder: |
+        - src/mediapipe_seguranca/video_io.py
+        - tests/test_video_io.py
