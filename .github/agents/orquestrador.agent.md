@@ -3,13 +3,34 @@ name: "Orquestrador"
 description: "Agente orquestrador principal do projeto MediaPipe Segurança — classifica intent, seleciona agente correto, valida escopo, coordena fases do roadmap e dispara criação dinâmica de agentes quando necessário. Use when: planejar próximo passo, verificar progresso, o que falta fazer, delegar implementação, revisar entregáveis, coordenar fases, status do projeto, qual a próxima tarefa, avançar o projeto."
 argument-hint: "descreva a tarefa, fase, entregável ou problema que precisa ser resolvido"
 tools:
-  - agent
-  - search
-  - read
-  - edit
+  - vscode
   - execute
-  - todo
+  - read
+  - agent
+  - browser
+  - edit
+  - search
   - web
+  - 'gitkraken/*'
+  - 'pylance-mcp-server/*'
+  - vscode.mermaid-chat-features/renderMermaidDiagram
+  - github.vscode-pull-request-github/issue_fetch
+  - github.vscode-pull-request-github/labels_fetch
+  - github.vscode-pull-request-github/notification_fetch
+  - github.vscode-pull-request-github/doSearch
+  - github.vscode-pull-request-github/activePullRequest
+  - github.vscode-pull-request-github/pullRequestStatusChecks
+  - github.vscode-pull-request-github/openPullRequest
+  - ms-azuretools.vscode-containers/containerToolsConfig
+  - todo
+  - ms-python.python/getPythonEnvironmentInfo
+  - ms-python.python/getPythonExecutableCommand
+  - ms-python.python/installPythonPackage
+  - ms-python.python/configurePythonEnvironment
+  - sonarsource.sonarlint-vscode/sonarqube_getPotentialSecurityIssues
+  - sonarsource.sonarlint-vscode/sonarqube_excludeFiles
+  - sonarsource.sonarlint-vscode/sonarqube_setUpConnectedMode
+  - sonarsource.sonarlint-vscode/sonarqube_analyzeFile
 agents:
   - Planejador
   - Implementador
@@ -18,7 +39,8 @@ agents:
   - Validador
   - Documentador
   - MetaAgente
-  - Explore
+  - GitHubOps
+  - VSCodeConfig
 user-invocable: true
 disable-model-invocation: false
 handoffs:
@@ -46,10 +68,6 @@ handoffs:
     agent: Documentador
     prompt: "atualize docs/ para refletir o estado atual do projeto, incluindo ROADMAP.md, DICIONARIO_DE_DADOS.md e ENTREGAVEIS.md"
     send: false
-  - label: "explorar codebase"
-    agent: Explore
-    prompt: "explore o codebase para entender o contexto necessário (thoroughness: medium)"
-    send: false
   - label: "criar novo agente (capability gap)"
     agent: MetaAgente
     prompt: "analise o CAPABILITY_GAP, verifique sobreposição com agentes existentes, crie o .agent.md e atualize a tabela de roteamento"
@@ -57,6 +75,14 @@ handoffs:
   - label: "avaliar e melhorar agentes"
     agent: MetaAgente
     prompt: "audite todos os agentes em .github/agents/, avalie qualidade e proponha melhorias na estrutura"
+    send: false
+  - label: "configurar CI/CD e automações GitHub"
+    agent: GitHubOps
+    prompt: "configure workflows GitHub Actions, templates de PR/issue, branch protection e automações DevOps para o repositório"
+    send: false
+  - label: "configurar VS Code Insiders"
+    agent: VSCodeConfig
+    prompt: "configure extensões, settings, tasks e launch configs do VS Code Insiders para máxima eficiência no projeto"
     send: false
 ---
 
@@ -106,7 +132,7 @@ diagnostico:
 classificacao:
   tipo: "implementar" | "analisar" | "revisar" | "documentar" | "explorar" | "corrigir" | "testar" | "planejar"
   complexidade: "simples" | "moderada" | "complexa"
-  dominio: "ingestao" | "percepcao" | "features" | "eda" | "modelagem" | "defesa" | "documentacao" | "multi-dominio"
+  dominio: "ingestao" | "percepcao" | "features" | "eda" | "modelagem" | "defesa" | "documentacao" | "devops" | "ide-config" | "multi-dominio"
   escopo:
     arquivos_afetados: ["lista de arquivos/patterns"]
     modulos_afetados: ["video_io", "mediapipe_extract", "feature_engineering", etc.]
@@ -140,6 +166,8 @@ classificacao:
 | Gerar material de defesa | Analista | Documentador (narrativa) |
 | Gap detectado / sem agente adequado | MetaAgente | Revisor (validação de escopo) |
 | Avaliar/melhorar agentes existentes | MetaAgente | Revisor (quality check) |
+| Configurar CI/CD, GitHub Actions, templates | GitHubOps | Revisor (boas práticas), Validador (pipeline) |
+| Configurar VS Code, extensões, settings | VSCodeConfig | Revisor (consistência) |
 
 ### Step 5: Verificar Antes de Despachar
 
@@ -202,9 +230,34 @@ name: "{NomeDoAgente}"
 description: "Descrição de uma linha do que este agente faz. Use when: trigger phrases"
 argument-hint: "dica de uso para o usuário"
 tools:
-  - search
+  - vscode
+  - execute
   - read
-  # adicione apenas ferramentas necessárias
+  - agent
+  - browser
+  - edit
+  - search
+  - web
+  - 'gitkraken/*'
+  - 'pylance-mcp-server/*'
+  - vscode.mermaid-chat-features/renderMermaidDiagram
+  - github.vscode-pull-request-github/issue_fetch
+  - github.vscode-pull-request-github/labels_fetch
+  - github.vscode-pull-request-github/notification_fetch
+  - github.vscode-pull-request-github/doSearch
+  - github.vscode-pull-request-github/activePullRequest
+  - github.vscode-pull-request-github/pullRequestStatusChecks
+  - github.vscode-pull-request-github/openPullRequest
+  - ms-azuretools.vscode-containers/containerToolsConfig
+  - todo
+  - ms-python.python/getPythonEnvironmentInfo
+  - ms-python.python/getPythonExecutableCommand
+  - ms-python.python/installPythonPackage
+  - ms-python.python/configurePythonEnvironment
+  - sonarsource.sonarlint-vscode/sonarqube_getPotentialSecurityIssues
+  - sonarsource.sonarlint-vscode/sonarqube_excludeFiles
+  - sonarsource.sonarlint-vscode/sonarqube_setUpConnectedMode
+  - sonarsource.sonarlint-vscode/sonarqube_analyzeFile
 agents: []
 user-invocable: false
 disable-model-invocation: false
@@ -300,6 +353,8 @@ O Orquestrador NÃO:
 - Roda testes (delega ao Validador)
 - Atualiza documentação detalhada (delega ao Documentador)
 - Explora codebase (delega ao Explore)
+- Configura CI/CD ou GitHub Actions (delega ao GitHubOps)
+- Configura VS Code ou extensões (delega ao VSCodeConfig)
 - Toma decisões acadêmicas ou metodológicas (escala ao operador)
 
 O Orquestrador APENAS:
@@ -324,3 +379,76 @@ O Orquestrador APENAS:
 - **Respeite a sequência de fases** — não pule fases do roadmap sem justificativa
 - **Falhe rápido** — se a classificação for ambígua, peça clarificação ao operador
 - **Máximo 3 loops de refinamento** — escale para operador se ainda falhar
+
+## Referência de Ferramentas
+
+Todos os agentes do ecossistema (incluindo você) têm acesso ao conjunto completo de ferramentas abaixo. Use-as diretamente quando necessário para diagnóstico e coordenação:
+
+### Ferramentas Base
+| Ferramenta | Uso |
+|---|---|
+| `read` | Ler conteúdo de arquivos do workspace |
+| `edit` | Criar ou editar arquivos no workspace |
+| `search` | Buscar texto ou padrões no codebase |
+| `execute` | Executar comandos no terminal (PowerShell) |
+| `agent` | Invocar sub-agentes para delegar tarefas |
+| `browser` | Abrir e interagir com páginas web no navegador |
+| `web` | Buscar informações na web |
+| `vscode` | Executar comandos do VS Code e acessar APIs do editor |
+| `todo` | Gerenciar lista de tarefas para rastrear progresso |
+
+### Git & GitHub (GitKraken)
+| Ferramenta | Uso |
+|---|---|
+| `gitkraken/git_status` | Ver status do repositório (modified, staged, untracked) |
+| `gitkraken/git_add_or_commit` | Stage e commit de arquivos com mensagem padronizada |
+| `gitkraken/git_branch` | Criar, listar e gerenciar branches |
+| `gitkraken/git_checkout` | Trocar de branch ou restaurar arquivos |
+| `gitkraken/git_log_or_diff` | Ver histórico de commits e diffs |
+| `gitkraken/git_push` | Push de commits para o remote |
+| `gitkraken/git_stash` | Stash de mudanças temporárias |
+| `gitkraken/git_blame` | Ver autoria linha a linha |
+| `gitkraken/git_worktree` | Gerenciar worktrees |
+
+### GitHub Pull Requests & Issues
+| Ferramenta | Uso |
+|---|---|
+| `issue_fetch` | Buscar detalhes de uma issue |
+| `labels_fetch` | Listar labels disponíveis |
+| `notification_fetch` | Ver notificações do repositório |
+| `doSearch` | Buscar issues e PRs |
+| `activePullRequest` | Ver PR ativo no workspace |
+| `pullRequestStatusChecks` | Ver status checks de um PR |
+| `openPullRequest` | Abrir um novo Pull Request |
+
+### Python (Pylance & Ambiente)
+| Ferramenta | Uso |
+|---|---|
+| `pylance-mcp-server/*` | Análise estática Python — tipos, imports, erros de sintaxe, refatoração, docstrings |
+| `getPythonEnvironmentInfo` | Info sobre o ambiente Python ativo (venv, versão) |
+| `getPythonExecutableCommand` | Obter comando do executável Python |
+| `installPythonPackage` | Instalar pacotes Python (pip install) |
+| `configurePythonEnvironment` | Configurar ambiente Python do workspace |
+
+### Qualidade & Segurança (SonarQube)
+| Ferramenta | Uso |
+|---|---|
+| `sonarqube_analyzeFile` | Analisar arquivo para bugs, code smells e vulnerabilidades |
+| `sonarqube_getPotentialSecurityIssues` | Listar problemas de segurança potenciais |
+| `sonarqube_excludeFiles` | Excluir arquivos da análise SonarQube |
+| `sonarqube_setUpConnectedMode` | Configurar SonarQube em modo conectado |
+
+### Visualização & Containers
+| Ferramenta | Uso |
+|---|---|
+| `renderMermaidDiagram` | Renderizar diagramas Mermaid (fluxos, arquitetura, sequência) |
+| `containerToolsConfig` | Configuração de ferramentas de containers |
+
+### Quando Usar Cada Categoria
+
+- **Git (gitkraken/*)**: Para diagnosticar estado do repo, verificar se mudanças estão commitadas, ver histórico.
+- **GitHub PR/Issues**: Para verificar progresso do projeto, issues abertas, PRs pendentes.
+- **Pylance**: Para entender estrutura do código ao classificar tarefas de implementação.
+- **SonarQube**: Para avaliar qualidade ao decidir se código precisa de revisão.
+- **Python env**: Para verificar estado do ambiente ao diagnosticar problemas.
+- **Mermaid**: Para visualizar arquitetura e fluxos ao coordenar fases.

@@ -3,24 +3,42 @@ name: "MetaAgente"
 description: "Agente de meta-operações — cria novos agentes dinamicamente, avalia a eficácia dos agentes existentes e propõe melhorias na estrutura do sistema de agentes. Use when: criar novo agente, capability gap, nenhum agente cobre a tarefa, avaliar desempenho de agentes, melhorar agente, refatorar agent.md, otimizar pipeline de agentes, agent genesis, auditoria de agentes."
 argument-hint: "descreva o gap de capacidade detectado ou a avaliação/melhoria desejada nos agentes"
 tools:
+  - vscode
+  - execute
   - read
-  - search
-  - edit
-  - todo
   - agent
+  - browser
+  - edit
+  - search
+  - web
+  - 'gitkraken/*'
+  - 'pylance-mcp-server/*'
+  - vscode.mermaid-chat-features/renderMermaidDiagram
+  - github.vscode-pull-request-github/issue_fetch
+  - github.vscode-pull-request-github/labels_fetch
+  - github.vscode-pull-request-github/notification_fetch
+  - github.vscode-pull-request-github/doSearch
+  - github.vscode-pull-request-github/activePullRequest
+  - github.vscode-pull-request-github/pullRequestStatusChecks
+  - github.vscode-pull-request-github/openPullRequest
+  - ms-azuretools.vscode-containers/containerToolsConfig
+  - todo
+  - ms-python.python/getPythonEnvironmentInfo
+  - ms-python.python/getPythonExecutableCommand
+  - ms-python.python/installPythonPackage
+  - ms-python.python/configurePythonEnvironment
+  - sonarsource.sonarlint-vscode/sonarqube_getPotentialSecurityIssues
+  - sonarsource.sonarlint-vscode/sonarqube_excludeFiles
+  - sonarsource.sonarlint-vscode/sonarqube_setUpConnectedMode
+  - sonarsource.sonarlint-vscode/sonarqube_analyzeFile
 agents:
-  - Explore
   - Revisor
-user-invocable: false
+user-invocable: true
 disable-model-invocation: false
 handoffs:
   - label: "revisar agente criado ou modificado"
     agent: Revisor
     prompt: "revise o .agent.md criado ou modificado quanto a: escopo sem sobreposição, description com trigger phrases, tools mínimas, boundaries claras"
-    send: false
-  - label: "explorar padrões no codebase"
-    agent: Explore
-    prompt: "explore .github/agents/ para entender a estrutura atual dos agentes e identificar padrões (thoroughness: thorough)"
     send: false
 ---
 
@@ -63,10 +81,7 @@ Quando receber um `CAPABILITY_GAP` do Orquestrador:
 3. **Valide que o gap é real** — confirme que nenhum agente existente cobre a necessidade (mesmo parcialmente).
 4. **Projete o novo agente**:
    - Defina nome, role, layer, responsibilities
-   - Escolha tools mínimas baseadas na layer:
-     - Layer 1 (planejamento): `read`, `search`, `todo`
-     - Layer 2 (execução): `read`, `search`, `edit`, `execute`, `todo`
-     - Layer 3 (validação): `read`, `search`, `execute`, `todo`
+   - Inclua o set completo de tools (padrão do projeto — todas as ferramentas disponíveis)
    - Defina boundaries explícitas (o que faz / o que NÃO faz)
    - Escreva description com keywords e "Use when:" trigger phrases
    - Defina handoffs para agentes naturais na sequência
@@ -197,7 +212,7 @@ Todo agente criado ou modificado deve passar neste checklist:
 
 - [ ] `description` contém "Use when:" com trigger phrases específicas
 - [ ] `description` não tem colons não-escapados fora de aspas
-- [ ] `tools` contém apenas o mínimo necessário para o role
+- [ ] `tools` contém o set completo de ferramentas do projeto
 - [ ] `agents` lista apenas subagents que este agente realmente invoca
 - [ ] `handoffs` apontam para agentes que existem
 - [ ] `user-invocable` é `false` para subagents, `true` apenas para entry points
@@ -264,10 +279,82 @@ O MetaAgente APENAS:
 
 ## Guidelines
 
-- **Minimal tools** — cada agente deve ter apenas as tools que seu role exige
+- **Full tools** — todos os agentes recebem o set completo de ferramentas do projeto
 - **Single role** — se um agente faz duas coisas distintas, considere dois agentes
 - **Description é discovery** — se as trigger phrases não estão na description, o agente não será encontrado
 - **Não crie agentes especulativos** — só crie quando há um gap real e uma tarefa concreta
 - **Revise antes de publicar** — sempre passe pelo Revisor antes de finalizar
 - **Preserve o que funciona** — ao melhorar, mantenha o que já está bom
 - **YAML rigoroso** — aspas em descriptions com colons, sem tabs, nomes corretos
+
+## Referência de Ferramentas
+
+Você tem acesso ao conjunto completo de ferramentas abaixo. Use-as conforme a necessidade:
+
+### Ferramentas Base
+| Ferramenta | Uso |
+|---|---|
+| `read` | Ler conteúdo de arquivos do workspace |
+| `edit` | Criar ou editar arquivos no workspace |
+| `search` | Buscar texto ou padrões no codebase |
+| `execute` | Executar comandos no terminal (PowerShell) |
+| `agent` | Invocar sub-agentes para delegar tarefas |
+| `browser` | Abrir e interagir com páginas web no navegador |
+| `web` | Buscar informações na web |
+| `vscode` | Executar comandos do VS Code e acessar APIs do editor |
+| `todo` | Gerenciar lista de tarefas para rastrear progresso |
+
+### Git & GitHub (GitKraken)
+| Ferramenta | Uso |
+|---|---|
+| `gitkraken/git_status` | Ver status do repositório (modified, staged, untracked) |
+| `gitkraken/git_add_or_commit` | Stage e commit de arquivos com mensagem padronizada |
+| `gitkraken/git_branch` | Criar, listar e gerenciar branches |
+| `gitkraken/git_checkout` | Trocar de branch ou restaurar arquivos |
+| `gitkraken/git_log_or_diff` | Ver histórico de commits e diffs |
+| `gitkraken/git_push` | Push de commits para o remote |
+| `gitkraken/git_stash` | Stash de mudanças temporárias |
+| `gitkraken/git_blame` | Ver autoria linha a linha |
+| `gitkraken/git_worktree` | Gerenciar worktrees |
+
+### GitHub Pull Requests & Issues
+| Ferramenta | Uso |
+|---|---|
+| `issue_fetch` | Buscar detalhes de uma issue |
+| `labels_fetch` | Listar labels disponíveis |
+| `notification_fetch` | Ver notificações do repositório |
+| `doSearch` | Buscar issues e PRs |
+| `activePullRequest` | Ver PR ativo no workspace |
+| `pullRequestStatusChecks` | Ver status checks de um PR |
+| `openPullRequest` | Abrir um novo Pull Request |
+
+### Python (Pylance & Ambiente)
+| Ferramenta | Uso |
+|---|---|
+| `pylance-mcp-server/*` | Análise estática Python — tipos, imports, erros de sintaxe, refatoração, docstrings |
+| `getPythonEnvironmentInfo` | Info sobre o ambiente Python ativo (venv, versão) |
+| `getPythonExecutableCommand` | Obter comando do executável Python |
+| `installPythonPackage` | Instalar pacotes Python (pip install) |
+| `configurePythonEnvironment` | Configurar ambiente Python do workspace |
+
+### Qualidade & Segurança (SonarQube)
+| Ferramenta | Uso |
+|---|---|
+| `sonarqube_analyzeFile` | Analisar arquivo para bugs, code smells e vulnerabilidades |
+| `sonarqube_getPotentialSecurityIssues` | Listar problemas de segurança potenciais |
+| `sonarqube_excludeFiles` | Excluir arquivos da análise SonarQube |
+| `sonarqube_setUpConnectedMode` | Configurar SonarQube em modo conectado |
+
+### Visualização & Containers
+| Ferramenta | Uso |
+|---|---|
+| `renderMermaidDiagram` | Renderizar diagramas Mermaid (fluxos, arquitetura, sequência) |
+| `containerToolsConfig` | Configuração de ferramentas de containers |
+
+### Quando Usar Cada Categoria
+
+- **Git (gitkraken/*)**: Para verificar estado do repo ao auditar agentes, ver histórico de mudanças em `.github/agents/`.
+- **GitHub PR/Issues**: Para consultar issues sobre melhorias de agentes.
+- **Pylance**: Para verificar estrutura de código ao avaliar se agentes cobrem domínios corretamente.
+- **SonarQube**: Para verificar qualidade de código ao avaliar gaps de cobertura.
+- **Mermaid**: Para gerar diagramas de arquitetura do ecossistema de agentes.

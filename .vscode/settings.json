@@ -1,0 +1,113 @@
+{
+  // ── Python Environment ──────────────────────────────────────
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.extraPaths": ["${workspaceFolder}/src"],
+
+  // ── Testing ─────────────────────────────────────────────────
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests/", "-v"],
+
+  // ── Formatting (Black) & Imports (isort) ────────────────────
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "black-formatter.args": ["--line-length", "120"],
+  "isort.args": ["--profile", "black", "--line-length", "120"],
+
+  // ── Linting (Ruff) ─────────────────────────────────────────
+  "ruff.lint.args": ["--line-length=120"],
+
+  // ── Editor ──────────────────────────────────────────────────
+  "editor.rulers": [88, 120],
+  "editor.wordWrap": "off",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.stickyScroll.enabled": true,
+
+  // ── Files ───────────────────────────────────────────────────
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/*.pyc": true,
+    ".venv": true
+  },
+
+  "files.watcherExclude": {
+    "**/data/raw/**": true,
+    "**/data/interim/**": true,
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    "**/.git/objects/**": true
+  },
+
+  // ── Search ──────────────────────────────────────────────────
+  "search.exclude": {
+    "**/data/raw": true,
+    "**/data/interim": true,
+    "**/.venv": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+
+  // ── Terminal ────────────────────────────────────────────────
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.env.windows": {
+    "VIRTUAL_ENV": "${workspaceFolder}/.venv",
+    "PYTHONPATH": "${workspaceFolder}/src"
+  },
+
+  // ── Markdown ────────────────────────────────────────────────
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.trimAutoWhitespace": false
+  },
+
+  // ── JSON ────────────────────────────────────────────────────
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2
+  },
+
+  // ── YAML ────────────────────────────────────────────────────
+  "[yaml]": {
+    "editor.tabSize": 2
+  },
+
+  // ── Spell Checker ──────────────────────────────────────────
+  "cSpell.language": "en,pt,pt_BR",
+  "cSpell.words": [
+    "mediapipe",
+    "seguranca",
+    "sklearn",
+    "seaborn",
+    "numpy",
+    "pandas",
+    "pytorch",
+    "opencv",
+    "dataclass",
+    "dataframe",
+    "pylance",
+    "pytest",
+    "isort",
+    "flake8",
+    "ruff"
+  ]
+}
